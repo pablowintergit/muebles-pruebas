@@ -1,0 +1,16 @@
+@use '../utilities/variables' as v;
+@use '../utilities/mixins';
+
+#bedOptions{
+    @include mixins.flex-display($flex-layout:v.$flex-layout-row,$align-items:flex-start,$justify-content:start);
+    
+    column-gap: 20%;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    label, select{
+        display: block;
+    }
+    label{
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,71 @@
+@use '../utilities/variables' as v;
+@use '../utilities/mixins';
+
+.product-list-container{
+    margin-top: 5vh;
+}
+
+.product-relation-section{
+    margin-top: 50px;
+}
+
+.product-relation-header-container{
+    text-align: center;
+}
+
+.product-relation-header{
+    margin-bottom: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3px;
+    margin:0 auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.product-relation-group{
+    @include mixins.flex-display($flex-layout:v.$flex-layout-row,$align-items:flex-start,
+                                $justify-content:space-around, 
+                                $row-gap:5px);
+    @include mixins.mobile(){
+        @include mixins.flex-display($flex-layout:v.$flex-layout-column,$row-gap:5vh);
+    }
+}
+
+.product-outstanding-header{
+    background-color:var(--product-outstanding--backcolor);
+    color: #fff;
+}
+
+.product-related-section{
+    @extend .product-relation-section;
+    margin-bottom: 20px;
+}
+
+.product-related-header{
+    @extend .product-relation-header;
+    background-color:var(--product-detail--backcolor);
+    color: #fff;
+}
+
+.product-thumbnail{
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: auto;
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+}
+
+
+
+
+
+
+
+

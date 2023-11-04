@@ -1,0 +1,128 @@
+@use '../utilities/variables' as v;
+@use '../utilities/mixins';
+
+/*Productos relacionados y destacados*/
+.card-product-containter{
+    @include mixins.flex-display($flex-layout:v.$flex-layout-row,$justify-content: center);
+    width: 100%;
+}
+
+.card-product-relation{
+    width: 300px;
+    height: auto;
+    text-align: center;
+    padding:8px 8px;
+    border-radius: 10px;
+        div{
+            padding-top: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            color:black;
+            background-color: #fff;
+        }
+        &.card-product-outstanding{
+            background-color:var(--product-outstanding--backcolor);
+            color: white;
+        }
+        &.card-product-related{
+            background-color:var(--product-detail--backcolor);
+            color: white;
+        }
+    @include mixins.mobile(){
+        width: 60vw;
+        div{
+            padding-top: 5px;
+        }
+    }
+}
+
+
+/*Tarjetas en lista de productos de una categoria determinada ej camas*/
+.card-product-list{
+    color: white;
+    height: auto;
+    text-align: center;
+    padding:4px 4px;
+        a{
+            display: block;
+            background-image: linear-gradient(to right, #cf9f83 0%, #a68775 100%);
+            padding: 7px 7px;
+            border-radius: 10px;
+        }
+        div{
+            color:black;
+            background-color: #fff;
+            padding-top: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+}
+
+/*Ficha Producto*/
+.card-product-detail{
+    @include mixins.flex-display($flex-layout:v.$flex-layout-row,$align-items:initial,$justify-content:center);
+    width: 95%;
+    height: 300px;
+    background-color:var(--product-detail--backcolor);
+    color: white;
+    height: auto;
+    padding:8px 8px;
+    border-radius: 10px;
+    margin:0 auto ;
+    margin-top: 20px;
+        &-thumbnail{
+            width: 50%;
+            min-width: 150px;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            overflow: auto;
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }
+        }
+        >div{
+            width: 50%;
+            color:black;
+            background-color: #fff;
+            padding-top: 10px;
+            padding-left: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        p{
+            line-height: 2;
+            font-weight: 500;
+        }
+    @include mixins.tablet(){
+        @include mixins.flex-display($flex-layout:v.$flex-layout-column,$flex-wrap:nowrap);
+        height: auto;
+        border-radius: 10px;
+        margin:0 auto ;
+        margin-top: 20px;
+        &-thumbnail{
+            width: 100%;
+            border-bottom-left-radius:initial;
+            border-top-right-radius: 10px;
+        }
+        >div{
+            width: 100%;
+            border-top-right-radius:initial;
+            border-bottom-left-radius: 10px;
+        }
+    }
+}
+
+.card-product-description{
+    width: 95%;
+    margin:0 auto ;
+    margin-top: 20px;
+        p{
+            margin-bottom: 10px;
+        }
+        h4{
+            margin-top: 1rem;
+            margin-bottom: 0.2rem;
+        }
+}

@@ -1,0 +1,83 @@
+@use '../utilities/variables' as v;
+@use '../utilities/mixins';
+
+//Categorias
+.category-container{
+    @include mixins.flex-display($flex-layout:v.$flex-layout-column,$gap:100px);
+    .category-header-container{
+        text-align: center;
+        .category-header{
+            display: inline-block;
+            text-align: center; 
+            background-color: var(--catogory-header);
+            color: #fff;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            margin-bottom: 10px;
+            padding: 3px;
+            margin:10px auto;
+        }
+    }
+
+    .catetory-group{
+        @include mixins.flex-display($flex-layout:v.$flex-layout-row,$justify-content:center,$gap:50px);
+        .category-option{
+            width: 400px;
+            aspect-ratio: 1/1;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 15px;
+            @include mixins.mobile(){
+                gap: 5vh;
+                width: 80vw;
+            }
+        }
+    }
+}
+
+#bedCategory{
+    background-image: url('../assets/main/images/bed-main.jpeg');
+}
+
+#lightTableCategory{
+    background-image:url('../assets/main/images/light-table.jpeg');
+}
+
+#diningRoomCategory{
+    background-image:url('../assets/main/images/dining-rom.jpeg');
+}
+
+#sideBarCategory{
+    background-image:url('../assets/main/images/side-board.jpeg');
+}
+
+/*Boton seguinos en Instagram*/
+#follow-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:100px;
+        img{
+            width: 50px;
+            aspect-ratio: 1/1;
+            height: auto;
+            display: inline-block;
+        }
+}
+
+#follow-button{
+    display: inline-block;
+    background-color: black;
+    color:white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 2em;
+    width: 358px;
+}
+

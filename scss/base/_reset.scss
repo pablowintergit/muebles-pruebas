@@ -1,0 +1,35 @@
+*, ul,ol{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+//Si bien estan resetados arriba los tuve que volver a resetear
+// por un problema con la especificidad, es un problema con boostrap
+figure,p{
+    margin:0px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-size: calc(1rem + 1.2vw);
+}
+h2{
+    font-size: calc(1rem + 1vw);
+}
+h3{
+    font-size: calc(0.8rem + .6vw);
+}
+h4{
+    font-size: calc(0.7rem + .3vw);
+}
+h5{
+    font-size: 0.7rem;
+}

@@ -1,0 +1,18 @@
+html, body{
+    font-family: 'Raleway', sans-serif;
+    background-color:#f5ebe2 ;
+}
+
+main{
+    margin-top: 50px;
+}
+
+.overlay{
+    width: 100%;
+    background: var(--shadow);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

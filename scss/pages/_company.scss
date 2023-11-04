@@ -1,0 +1,75 @@
+@use '../utilities/variables' as v;
+@use '../utilities/mixins';
+#companySection{
+    margin: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.company-section{
+    margin-top: 20px;
+    margin-bottom: 20px;
+        .company-name{
+            font-style: italic;
+            font-weight: bold;
+            color: brown;
+        }
+
+        p{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .company-thumbnail{
+            max-width: 400px;
+            aspect-ratio: 1/1;
+            height: auto;
+            border: 1px #cccccc solid;
+            padding: 4px;
+            margin: auto; 
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }            
+
+                &-left{
+                    margin-right: 10px;
+                    clear: left;
+                    float: left;
+                }
+
+                &-right{
+                    margin-left: 10px;
+                    clear: right;
+                    float: right;
+                }
+
+                figcaption{
+                    background-color: var(--main-backcolor);
+                    color: white;
+                    font-style: italic;
+                    padding: 2px;
+                    text-align: center;
+                }                
+        }
+    @include mixins.mobile(){
+        @include mixins.flex-display($flex-layout:v.$flex-layout-column,$row-gap:2vh);
+        margin-top: 20px;
+        margin-bottom: 20px;
+            p{
+                margin-left: initial;
+                margin-right: initial;
+                margin-top:10px;
+            }
+            .company-thumbnail{
+                aspect-ratio:initial;
+                &-left, &-right{
+                    margin:0 0;
+                    clear:both;
+                    float: none;
+                }
+            }
+    }
+}
+
